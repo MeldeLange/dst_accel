@@ -235,7 +235,8 @@ count if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
 keep if clock_change - date_start_wear == 8 | clock_change - date_start_wear == 7 | clock_change - date_start_wear == 6 | clock_change - date_start_wear == 5 | clock_change - date_start_wear == 4 | clock_change - date_start_wear == 3 | clock_change - date_start_wear == 2 | clock_change - date_start_wear == 1 | clock_change - date_start_wear == 0 | clock_change - date_start_wear == -1 | clock_change - date_start_wear == -2 | clock_change - date_start_wear == -3 | clock_change - date_start_wear == -4 | clock_change - date_start_wear == -5 | clock_change - date_start_wear == -6 // 26,051 obs deleted
 describe // 8714 obs. 123 vars.
 
-
+count if season =="Spring" // 3190
+count if season =="Autumn" // 5524
 ************************************************************************	
 
 *8. Generate variable for age when starting wearing accelerometer
