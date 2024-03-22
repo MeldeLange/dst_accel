@@ -39,23 +39,22 @@ save accel8.dta, replace
 *2. Create sleep duration variables named as to whether day of week is before or after the clock change.
 
 *Create variable for start day
-gen start_day = . // 
-replace start_day =xx if clock_change - date_start_wear == 13 // Starting wear 2 Mon before:
-replace start_day =xx if clock_change - date_start_wear == 12 // Starting wear 2 Tues before:
-replace start_day =xx if clock_change - date_start_wear == 11 // Starting wear 2 Wed before:
-replace start_day =xx if clock_change - date_start_wear == 10 // Starting wear 2 Thur before:
-replace start_day =xx if clock_change - date_start_wear == 9 // Starting wear 2 Fri before:
-replace start_day =xx if clock_change - date_start_wear == 8 // Starting wear 2 Sat before: 996
-replace start_day =xx if clock_change - date_start_wear == 6 // Starting wear Mon before: 1073
-replace start_day =xx if clock_change - date_start_wear == 4 // Starting wear Wed before: 536
-replace start_day =xx if clock_change - date_start_wear == 3 // Starting wear Thurs before: 820
-replace start_day =10 if clock_change - date_start_wear == 2 // Starting wear Fri before: 701
-replace start_day =11 if clock_change - date_start_wear == 1 // Starting wear Sat before: 1073
-replace start_day =12 if clock_change - date_start_wear == -1 // Starting wear Mon after: 869
-replace start_day =13 if clock_change - date_start_wear == -3 // Starting wear Wed after: 669
-replace start_day =14 if clock_change - date_start_wear == -4 // Starting wear Thurs after: 764 
-replace start_day =15 if clock_change - date_start_wear == -5 // Starting wear Fri after: 468
-replace start_day =16 if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
+gen start_day = . // 11780
+replace start_day =1 if clock_change - date_start_wear == 13 // Starting wear 2 Mon before: 835
+replace start_day =2 if clock_change - date_start_wear == 11 // Starting wear 2 Wed before: 665
+replace start_day =3 if clock_change - date_start_wear == 10 // Starting wear 2 Thur before: 632
+replace start_day =4 if clock_change - date_start_wear == 9 // Starting wear 2 Fri before: 934
+replace start_day =5 if clock_change - date_start_wear == 8 // Starting wear 2 Sat before: 996
+replace start_day =6 if clock_change - date_start_wear == 6 // Starting wear Mon before: 1073
+replace start_day =7 if clock_change - date_start_wear == 4 // Starting wear Wed before: 536
+replace start_day =8 if clock_change - date_start_wear == 3 // Starting wear Thurs before: 820
+replace start_day =9 if clock_change - date_start_wear == 2 // Starting wear Fri before: 701
+replace start_day =10 if clock_change - date_start_wear == 1 // Starting wear Sat before: 1073
+replace start_day =11 if clock_change - date_start_wear == -1 // Starting wear Mon after: 869
+replace start_day =12 if clock_change - date_start_wear == -3 // Starting wear Wed after: 669
+replace start_day =13 if clock_change - date_start_wear == -4 // Starting wear Thurs after: 764 
+replace start_day =14 if clock_change - date_start_wear == -5 // Starting wear Fri after: 468
+replace start_day =15 if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
 
 
 *Create sleep dur by day in our study period
@@ -77,57 +76,97 @@ gen sleep_dur_sun_after = .
 
 
 replace sleep_dur_sun_before = sleep_dur_sun if start_day == 1
-replace sleep_dur_mon_before = sleep_dur_mon if start_day == 1
-replace sleep_dur_tue_before = sleep_dur_tue if start_day == 1
+replace sleep_dur_sun_before = sleep_dur_sun if start_day == 2
+replace sleep_dur_sun_before = sleep_dur_sun if start_day == 3
+replace sleep_dur_sun_before = sleep_dur_sun if start_day == 4
+replace sleep_dur_sun_before = sleep_dur_sun if start_day == 5
+
+
+replace sleep_dur_mon_before = sleep_dur_mon if start_day == 2
+replace sleep_dur_mon_before = sleep_dur_mon if start_day == 3
+replace sleep_dur_mon_before = sleep_dur_mon if start_day == 4
+replace sleep_dur_mon_before = sleep_dur_mon if start_day == 5
+
+
 replace sleep_dur_tue_before = sleep_dur_tue if start_day == 2
-replace sleep_dur_wed_before = sleep_dur_wed if start_day == 1
-replace sleep_dur_wed_before = sleep_dur_wed if start_day == 2
-replace sleep_dur_thur_before = sleep_dur_thur if start_day == 1
-replace sleep_dur_thur_before = sleep_dur_thur if start_day == 2
-replace sleep_dur_thur_before = sleep_dur_thur if start_day == 3
-replace sleep_dur_fri_before = sleep_dur_fri if start_day == 1
-replace sleep_dur_fri_before = sleep_dur_fri if start_day == 2
-replace sleep_dur_fri_before = sleep_dur_fri if start_day == 3
-replace sleep_dur_fri_before = sleep_dur_fri if start_day == 4
-replace sleep_dur_sat_before = sleep_dur_sat if start_day == 2
-replace sleep_dur_sat_before = sleep_dur_sat if start_day == 3
-replace sleep_dur_sat_before = sleep_dur_sat if start_day == 4
-replace sleep_dur_sat_before = sleep_dur_sat if start_day == 5
-replace sleep_dur_sun_change = sleep_dur_sun if start_day == 2
-replace sleep_dur_sun_change = sleep_dur_sun if start_day == 3
-replace sleep_dur_sun_change = sleep_dur_sun if start_day == 4
-replace sleep_dur_sun_change = sleep_dur_sun if start_day == 5
+replace sleep_dur_tue_before = sleep_dur_tue if start_day == 3
+replace sleep_dur_tue_before = sleep_dur_tue if start_day == 4
+replace sleep_dur_tue_before = sleep_dur_tue if start_day == 5
+replace sleep_dur_tue_before = sleep_dur_tue if start_day == 6
+
+
+replace sleep_dur_wed_before = sleep_dur_wed if start_day == 3
+replace sleep_dur_wed_before = sleep_dur_wed if start_day == 4
+replace sleep_dur_wed_before = sleep_dur_wed if start_day == 5
+replace sleep_dur_wed_before = sleep_dur_wed if start_day == 6
+
+
+replace sleep_dur_thur_before = sleep_dur_thur if start_day == 4
+replace sleep_dur_thur_before = sleep_dur_thur if start_day == 5
+replace sleep_dur_thur_before = sleep_dur_thur if start_day == 6
+replace sleep_dur_thur_before = sleep_dur_thur if start_day == 7
+
+
+replace sleep_dur_fri_before = sleep_dur_fri if start_day == 5
+replace sleep_dur_fri_before = sleep_dur_fri if start_day == 6
+replace sleep_dur_fri_before = sleep_dur_fri if start_day == 7
+replace sleep_dur_fri_before = sleep_dur_fri if start_day == 8
+
+
+replace sleep_dur_sat_before = sleep_dur_sat if start_day == 6
+replace sleep_dur_sat_before = sleep_dur_sat if start_day == 7
+replace sleep_dur_sat_before = sleep_dur_sat if start_day == 8
+replace sleep_dur_sat_before = sleep_dur_sat if start_day == 9
+
+
 replace sleep_dur_sun_change = sleep_dur_sun if start_day == 6
-replace sleep_dur_mon_after = sleep_dur_mon if start_day == 3
-replace sleep_dur_mon_after = sleep_dur_mon if start_day == 4
-replace sleep_dur_mon_after = sleep_dur_mon if start_day == 5
-replace sleep_dur_mon_after = sleep_dur_mon if start_day == 6
-replace sleep_dur_tue_after = sleep_dur_tue if start_day == 3
-replace sleep_dur_tue_after = sleep_dur_tue if start_day == 4
-replace sleep_dur_tue_after = sleep_dur_tue if start_day == 5
-replace sleep_dur_tue_after = sleep_dur_tue if start_day == 6
+replace sleep_dur_sun_change = sleep_dur_sun if start_day == 7
+replace sleep_dur_sun_change = sleep_dur_sun if start_day == 8
+replace sleep_dur_sun_change = sleep_dur_sun if start_day == 9
+replace sleep_dur_sun_change = sleep_dur_sun if start_day == 10
+
+
+replace sleep_dur_mon_after = sleep_dur_mon if start_day == 7
+replace sleep_dur_mon_after = sleep_dur_mon if start_day == 8
+replace sleep_dur_mon_after = sleep_dur_mon if start_day == 9
+replace sleep_dur_mon_after = sleep_dur_mon if start_day == 10
+
+
 replace sleep_dur_tue_after = sleep_dur_tue if start_day == 7
-replace sleep_dur_wed_after = sleep_dur_wed if start_day == 4
-replace sleep_dur_wed_after = sleep_dur_wed if start_day == 5
-replace sleep_dur_wed_after = sleep_dur_wed if start_day == 6
-replace sleep_dur_wed_after = sleep_dur_wed if start_day == 7
-replace sleep_dur_thur_after = sleep_dur_thur if start_day == 5
-replace sleep_dur_thur_after = sleep_dur_thur if start_day == 6
-replace sleep_dur_thur_after = sleep_dur_thur if start_day == 7
-replace sleep_dur_thur_after = sleep_dur_thur if start_day == 8
-replace sleep_dur_fri_after = sleep_dur_fri if start_day == 6
-replace sleep_dur_fri_after = sleep_dur_fri if start_day == 7
-replace sleep_dur_fri_after = sleep_dur_fri if start_day == 8
-replace sleep_dur_fri_after = sleep_dur_fri if start_day == 9
-replace sleep_dur_sat_after = sleep_dur_sat if start_day == 7
-replace sleep_dur_sat_after = sleep_dur_sat if start_day == 8
-replace sleep_dur_sat_after = sleep_dur_sat if start_day == 9
-replace sleep_dur_sat_after = sleep_dur_sat if start_day == 10
-replace sleep_dur_sun_after = sleep_dur_sun if start_day == 7
-replace sleep_dur_sun_after = sleep_dur_sun if start_day == 8
-replace sleep_dur_sun_after = sleep_dur_sun if start_day == 9
-replace sleep_dur_sun_after = sleep_dur_sun if start_day == 10
+replace sleep_dur_tue_after = sleep_dur_tue if start_day == 8
+replace sleep_dur_tue_after = sleep_dur_tue if start_day == 9
+replace sleep_dur_tue_after = sleep_dur_tue if start_day == 10
+replace sleep_dur_tue_after = sleep_dur_tue if start_day == 11
+
+
+replace sleep_dur_wed_after = sleep_dur_wed if start_day == 8
+replace sleep_dur_wed_after = sleep_dur_wed if start_day == 9
+replace sleep_dur_wed_after = sleep_dur_wed if start_day == 10
+replace sleep_dur_wed_after = sleep_dur_wed if start_day == 11
+
+
+replace sleep_dur_thur_after = sleep_dur_thur if start_day == 9
+replace sleep_dur_thur_after = sleep_dur_thur if start_day == 10
+replace sleep_dur_thur_after = sleep_dur_thur if start_day == 11
+replace sleep_dur_thur_after = sleep_dur_thur if start_day == 12
+
+replace sleep_dur_fri_after = sleep_dur_fri if start_day == 10
+replace sleep_dur_fri_after = sleep_dur_fri if start_day == 11
+replace sleep_dur_fri_after = sleep_dur_fri if start_day == 12
+replace sleep_dur_fri_after = sleep_dur_fri if start_day == 13
+
+
+replace sleep_dur_sat_after = sleep_dur_sat if start_day == 11
+replace sleep_dur_sat_after = sleep_dur_sat if start_day == 12
+replace sleep_dur_sat_after = sleep_dur_sat if start_day == 13
+replace sleep_dur_sat_after = sleep_dur_sat if start_day == 14
+
 replace sleep_dur_sun_after = sleep_dur_sun if start_day == 11
+replace sleep_dur_sun_after = sleep_dur_sun if start_day == 12
+replace sleep_dur_sun_after = sleep_dur_sun if start_day == 13
+replace sleep_dur_sun_after = sleep_dur_sun if start_day == 14
+replace sleep_dur_sun_after = sleep_dur_sun if start_day == 15
+
 
 *Save & upload
 save accel9.dta, replace
@@ -140,72 +179,82 @@ save accel9.dta, replace
 *Spring
 tab start_day if season =="Spring"
 
-*  start_day |      Freq.     Percent        Cum.
+* start_day |      Freq.     Percent        Cum.
 *------------+-----------------------------------
-*          1 |        406       12.73       12.73
-*          2 |        379       11.88       24.61
-*          3 |        103        3.23       27.84
-*          4 |        168        5.27       33.10
-*          5 |        352       11.03       44.14
-*          6 |        513       16.08       60.22
-*          7 |        467       14.64       74.86
-*          8 |        193        6.05       80.91
-*          9 |        262        8.21       89.12
-*         10 |        119        3.73       92.85
-*         11 |        228        7.15      100.00
+*          1 |        403        8.82        8.82
+*          2 |        243        5.32       14.14
+*          3 |        240        5.25       19.39
+*          4 |        493       10.79       30.18
+*          5 |        406        8.89       39.07
+*          6 |        379        8.30       47.36
+*          7 |        103        2.25       49.62
+*          8 |        168        3.68       53.29
+*          9 |        352        7.70       61.00
+*         10 |        513       11.23       72.23
+*         11 |        467       10.22       82.45
+*         12 |        193        4.22       86.67
+*         13 |        262        5.73       92.41
+*         14 |        119        2.60       95.01
+*         15 |        228        4.99      100.00
 *------------+-----------------------------------
-*      Total |      3,190      100.00
+*      Total |      4,569      100.00
 
 
-sum sleep_dur_sun_before if season =="Spring" // Obs: 406. Mean: 512.1754
-sum sleep_dur_mon_before if season =="Spring" // Obs: 406. Mean: 517.9389 
-sum sleep_dur_tue_before if season =="Spring" // Obs: 785. Mean: 514.0341 
-sum  sleep_dur_wed_before if season =="Spring" // Obs: 785. Mean: 508.3659
-sum  sleep_dur_thur_before if season =="Spring" // Obs: 888. Mean: 516.6162
-sum  sleep_dur_fri_before if season =="Spring" // Obs: 1,056. Mean: 514.7727
-sum  sleep_dur_sat_before if season =="Spring" // Obs: 1,002. Mean: 554.6299 
-sum  sleep_dur_sun_change if season =="Spring" // Obs:  1,515. Mean: 499.4162
-sum  sleep_dur_mon_after if season =="Spring" // Obs: 1,136. Mean: 524.7254  
-sum  sleep_dur_tue_after if season =="Spring" // Obs: 1,603. Mean: 521.7687
-sum  sleep_dur_wed_after if season =="Spring" // Obs: 1,500. Mean: 520.0896
-sum  sleep_dur_thur_after if season =="Spring" // Obs: 1,525. Mean: 516.7381
-sum  sleep_dur_fri_after if season =="Spring" // Obs: 1,435. Mean: 533.7834
-sum  sleep_dur_sat_after if season =="Spring" // Obs: 1,041. Mean: 544.1706
-sum  sleep_dur_sun_after if season =="Spring" // Obs: 1,269. Mean: 506.556 
+
+sum sleep_dur_sun_before if season =="Spring" // obs: 1,785 Mean:  510.2864
+sum sleep_dur_mon_before if season =="Spring" // obs: 1,382 Mean:   521.2758
+sum sleep_dur_tue_before if season =="Spring" //   1,761    515.8426
+sum  sleep_dur_wed_before if season =="Spring" //  1,518    510.5573
+sum  sleep_dur_thur_before if season =="Spring" //  1,381    517.6831 
+sum  sleep_dur_fri_before if season =="Spring" // 1,056    514.7727 
+sum  sleep_dur_sat_before if season =="Spring" // 1,002    554.6299
+sum  sleep_dur_sun_change if season =="Spring" // 1,515    499.4162
+sum  sleep_dur_mon_after if season =="Spring" //   1,136    524.7254
+sum  sleep_dur_tue_after if season =="Spring" //  1,603    521.7687
+sum  sleep_dur_wed_after if season =="Spring" // 1,500    520.0896
+sum  sleep_dur_thur_after if season =="Spring" // 1,525    516.7381
+sum  sleep_dur_fri_after if season =="Spring" //  1,435    533.7834
+sum  sleep_dur_sat_after if season =="Spring" // 1,041    544.1706
+sum  sleep_dur_sun_after if season =="Spring" //  1,269     506.556
 
 
 *Autumn
 tab start_day if season =="Autumn"
 
-*start_day |      Freq.     Percent        Cum.
-*------------+-----------------------------------
-*          1 |        590       10.68       10.68
-*          2 |        694       12.56       23.24
-*          3 |        433        7.84       31.08
-*          4 |        652       11.80       42.89
-*          5 |        349        6.32       49.20
-*          6 |        560       10.14       59.34
-*          7 |        402        7.28       66.62
-*          8 |        476        8.62       75.24
-*          9 |        502        9.09       84.32
-*         10 |        349        6.32       90.64
-*         11 |        517        9.36      100.00
-*------------+-----------------------------------
-*      Total |      5,524      100.00
+*  start_day |      Freq.     Percent        Cum.
+* ------------+-----------------------------------
+*           1 |        432        5.99        5.99
+*           2 |        422        5.85       11.84
+*           3 |        392        5.44       17.28
+*           4 |        441        6.12       23.39
+*           5 |        590        8.18       31.58
+*           6 |        694        9.62       41.20
+*           7 |        433        6.00       47.21
+*           8 |        652        9.04       56.25
+*           9 |        349        4.84       61.09
+*          10 |        560        7.77       68.85
+*          11 |        402        5.57       74.43
+*          12 |        476        6.60       81.03
+*          13 |        502        6.96       87.99
+*          14 |        349        4.84       92.83
+*          15 |        517        7.17      100.00
+* ------------+-----------------------------------
+*       Total |      7,211      100.00
 
 
-sum sleep_dur_sun_before if season =="Autumn" // obs: 590. mean: 623.5078.
-sum sleep_dur_mon_before if season =="Autumn" // obs: 590. mean: 523.5986.
-sum sleep_dur_tue_before if season =="Autumn" // obs: 1,284. mean: 522.9421.
-sum sleep_dur_wed_before if season =="Autumn" // obs: 1,284. mean: 521.0131.
-sum sleep_dur_thur_before if season =="Autumn" // obs: 1,717. mean: 518.5929.
-sum sleep_dur_fri_before if season =="Autumn" // obs: 2,369. mean: 521.7553.
-sum sleep_dur_sat_before if season =="Autumn" // obs: 2,128. mean: 541.0692.
-sum sleep_dur_sun_change if season =="Autumn" // obs: 2,688. mean: 602.8179.
-sum sleep_dur_mon_after if season =="Autumn" // obs: 1,994. mean: 525.8889.
-sum sleep_dur_tue_after if season =="Autumn" // obs:  2,396. mean: 527.0184 .
-sum sleep_dur_wed_after if season =="Autumn" // obs: 1,963. mean: 523.1609.
-sum sleep_dur_thur_after if season =="Autumn" // obs: 1,787. mean: 523.4606.
-sum sleep_dur_fri_after if season =="Autumn" // obs: 1,940. mean: 525.1398.
-sum sleep_dur_sat_after if season =="Autumn" // obs: 1,729. mean: 538.7882.
-sum sleep_dur_sun_after if season =="Autumn" // obs: 2,246. mean: 619.3122.
+
+sum sleep_dur_sun_before if season =="Autumn" // 2,277    623.4229 
+sum sleep_dur_mon_before if season =="Autumn" //  1,845    523.7151 
+sum sleep_dur_tue_before if season =="Autumn" // 2,539    522.8975
+sum sleep_dur_wed_before if season =="Autumn" // 2,117     521.801
+sum sleep_dur_thur_before if season =="Autumn" // 2,158    520.2017 
+sum sleep_dur_fri_before if season =="Autumn" // 2,369    521.7553 
+sum sleep_dur_sat_before if season =="Autumn" // 2,128    541.0692
+sum sleep_dur_sun_change if season =="Autumn" // 2,688    602.8179
+sum sleep_dur_mon_after if season =="Autumn" // 1,994    525.8889
+sum sleep_dur_tue_after if season =="Autumn" //  2,396    527.0184
+sum sleep_dur_wed_after if season =="Autumn" // 1,963    523.1609
+sum sleep_dur_thur_after if season =="Autumn" // 1,787    523.4606
+sum sleep_dur_fri_after if season =="Autumn" //  1,940    525.1398
+sum sleep_dur_sat_after if season =="Autumn" // 1,729    538.7882
+sum sleep_dur_sun_after if season =="Autumn" // 2,246    619.3122
