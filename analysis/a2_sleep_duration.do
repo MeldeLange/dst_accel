@@ -39,18 +39,23 @@ save accel8.dta, replace
 *2. Create sleep duration variables named as to whether day of week is before or after the clock change.
 
 *Create variable for start day
-gen start_day = . // 8714 missing values
-replace start_day =1 if clock_change - date_start_wear == 8 // Starting wear Sat before: 996
-replace start_day =2 if clock_change - date_start_wear == 6 // Starting wear Mon before: 1073
-replace start_day =3 if clock_change - date_start_wear == 4 // Starting wear Wed before: 536
-replace start_day =4 if clock_change - date_start_wear == 3 // Starting wear Thurs before: 820
-replace start_day =5 if clock_change - date_start_wear == 2 // Starting wear Fri before: 701
-replace start_day =6 if clock_change - date_start_wear == 1 // Starting wear Sat before: 1073
-replace start_day =7 if clock_change - date_start_wear == -1 // Starting wear Mon after: 869
-replace start_day =8 if clock_change - date_start_wear == -3 // Starting wear Wed after: 669
-replace start_day =9 if clock_change - date_start_wear == -4 // Starting wear Thurs after: 764 
-replace start_day =10 if clock_change - date_start_wear == -5 // Starting wear Fri after: 468
-replace start_day =11 if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
+gen start_day = . // 
+replace start_day =xx if clock_change - date_start_wear == 13 // Starting wear 2 Mon before:
+replace start_day =xx if clock_change - date_start_wear == 12 // Starting wear 2 Tues before:
+replace start_day =xx if clock_change - date_start_wear == 11 // Starting wear 2 Wed before:
+replace start_day =xx if clock_change - date_start_wear == 10 // Starting wear 2 Thur before:
+replace start_day =xx if clock_change - date_start_wear == 9 // Starting wear 2 Fri before:
+replace start_day =xx if clock_change - date_start_wear == 8 // Starting wear 2 Sat before: 996
+replace start_day =xx if clock_change - date_start_wear == 6 // Starting wear Mon before: 1073
+replace start_day =xx if clock_change - date_start_wear == 4 // Starting wear Wed before: 536
+replace start_day =xx if clock_change - date_start_wear == 3 // Starting wear Thurs before: 820
+replace start_day =10 if clock_change - date_start_wear == 2 // Starting wear Fri before: 701
+replace start_day =11 if clock_change - date_start_wear == 1 // Starting wear Sat before: 1073
+replace start_day =12 if clock_change - date_start_wear == -1 // Starting wear Mon after: 869
+replace start_day =13 if clock_change - date_start_wear == -3 // Starting wear Wed after: 669
+replace start_day =14 if clock_change - date_start_wear == -4 // Starting wear Thurs after: 764 
+replace start_day =15 if clock_change - date_start_wear == -5 // Starting wear Fri after: 468
+replace start_day =16 if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
 
 
 *Create sleep dur by day in our study period
