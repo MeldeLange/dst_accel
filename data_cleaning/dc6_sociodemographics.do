@@ -27,26 +27,25 @@ save sleepdur_emp.dta, replace
 *Open main dataset (use as master)
 set more off
 use /mnt/project/accel5.dta, clear
-describe // 8714 obs. 130 vars.
+describe // 11780 obs. 130 vars.
 
 merge 1:1 eid using /mnt/project/sleepdur_emp.dta
 rename _merge _merge_sleepdur_emp
 
-
 * Result                           # of obs.
 *    -----------------------------------------
-*    not matched                       493,650
+*    not matched                       490,584
 *        from master                         0  (_merge==1)
-*        from using                    493,650  (_merge==2)
+*        from using                    490,584  (_merge==2)
 *
-*    matched                             8,714  (_merge==3)
+*    matched                            11,780  (_merge==3)
 *    -----------------------------------------
 
 *Just keep those in main dataset (master)
-count if _merge_sleepdur_emp ==3 // 8714
-keep if _merge_sleepdur_emp ==3 // 493,650 obs deleted.
+count if _merge_sleepdur_emp ==3 // 11780
+keep if _merge_sleepdur_emp ==3 // 490,584 observations deleted
 drop _merge_sleepdur_emp
-describe // 8714 obs. 132 vars.
+describe // 11780 obs. 132 vars.
 
 
 *Save & upload
@@ -125,8 +124,8 @@ tab sleep_dur, missing
 summarize sleep_dur // min: 1. Max: 15. Mean: 7.170787 (3115 obs)
 	*Remove extreme values of sleep duration (>18 hours & <3) as per this paper https://link.springer.com/article/10.1007/s10654-023-00981-x which says "Extreme responses of less than 3 h or more than 18 h were excluded to avoid improbable short or long sleep durations confounded by poor health."
 replace sleep_dur =. if sleep_dur >18 // 0
-replace sleep_dur =. if sleep_dur <3 // 2 changed to missing.
-sum sleep_dur //  Mean: 7.176193. Min: 3. Max: 18.
+replace sleep_dur =. if sleep_dur <3 // 4 changed to missing.
+sum sleep_dur //  Mean:7.169167. Min: 3. Max: 18.
 
 
 *Sleep duration recode into 3 categories
@@ -142,7 +141,7 @@ tab sleep_dur_cats
 label define sleep_dur_cats_lb 1"<=6 hours" 2"7-8 hours" 3"9 or more hours"
 label values sleep_dur_cats sleep_dur_cats_lb
 tab sleep_dur_cats, missing
-tab sleep_dur_cats // <=6 hours: 1819, 7-8 hours: 6307. =>8 hours: 552.
+tab sleep_dur_cats // <=6 hours: 2,519, 7-8 hours: 8,467. =>8 hours: 748
 
 
 ********************************************************************************************
@@ -253,7 +252,7 @@ tab employ_3cats, missing
 
 label define employ_3cats_lb 1 "Paid employment/self-employed" 2 "Retired" 3 "Other"
 label values employ_3cats employ_3cats_lb
-tab employ_3cats, missing // 5245 employed. 2817 retired. 630 other. 22 missing.
+tab employ_3cats, missing // 7,141 employed. 3,769 retired. 842  other. 28 missing.
 
 ******************************************************************************************
 
