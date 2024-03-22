@@ -4,10 +4,10 @@
 *Open dataset
 set more off
 use /mnt/project/accel4.dta, clear
-describe // 
+describe // 11780 obs. 127 vars.
 
-count if season =="Spring" // 3190
-count if season =="Autumn" // 5524
+count if season =="Spring" // 4569
+count if season =="Autumn" // 7211
 
 
 *Spring: clocks go forward 1 hour at 1am on the Sunday. Doherty et al. have added (imputed) an hour of data from 1-2am.
