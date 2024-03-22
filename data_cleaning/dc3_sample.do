@@ -168,7 +168,7 @@ save accel3.dta, replace
 	*Create variable that is year of actigraphy wear
 g year = year(date_start_wear)
 list date_start_wear year in 1/5
-tab year // 2013: 11,174. 2014: 42,715. 2015: 40,715.
+tab year // 2013: 11,164. 2014: 42,715. 2015: 40,715.
 	
 	*Create variable that is month of actigraphy wear
 g month = month(date_start_wear)
@@ -177,7 +177,7 @@ tab month // March: 7063. April: 7553. October: 10,873. November 9,276.
 	
 	*Cut sample down to those starting to wear accelerometer in March, April, October or November
 keep if month ==3 | month ==4 | month ==10 | month ==11 // 59829 obs deleted.
-describe // 34,766 obs. 121 vars.
+describe // 34,765 obs. 121 vars.
 
 *****************************************************************
 
@@ -212,11 +212,19 @@ generate season = ""
 **************************************************************************************
 
 
-*7.Only keep people who have usable data (not day 1) for the 15-day period of the Sunday before the clock change (=7 days before - so need to start wearing accelerometer 8 days before) to the Sunday after the clock change (=7 days after - so need to start wearing accelerometer 6 days after).
-*So we have people starting on the Saturday before the clock change to the Saturday after the clock change.
+*7.Only keep people who have usable data (not day 1) for the 15-day period of the Sunday before the clock change to the Sunday after the clock change.
+ 
+*Need to start wearing accelerometer 13 days before clock change to get data (not day 1) for the Sunday before the clock change
+*Need to start wearing accelerometer 6 days after the clock change to get data (not day 1) for the Sunday after the clock change.
+*So we have people starting accelerometer wear from 2 Mondays before the clock change to the Saturday after the clock change.
 
-count if clock_change - date_start_wear == 8 // Starting wear Sat before: 996
-count if clock_change - date_start_wear == 7 // Starting wearSun before: 0
+count if clock_change - date_start_wear == 13 // Starting wear 2 Mons before: 835
+count if clock_change - date_start_wear == 12 // Starting wear 2 Tue before: 0
+count if clock_change - date_start_wear == 11 // Starting wear 2 Wed before: 665
+count if clock_change - date_start_wear == 10 // Starting wear 2 Thur before: 632
+count if clock_change - date_start_wear == 9 // Starting wear 2 Fri before: 934
+count if clock_change - date_start_wear == 8 // Starting wear 2 Sat before: 996
+count if clock_change - date_start_wear == 7 // Starting wear Sun before: 0
 count if clock_change - date_start_wear == 6 // Starting wear Mon before: 1,073
 count if clock_change - date_start_wear == 5 // Starting wear Tues before: 0
 count if clock_change - date_start_wear == 4 // Starting wear Wed before: 536
@@ -232,11 +240,13 @@ count if clock_change - date_start_wear == -5 // Starting wear Fri after: 468
 count if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
 
 
-keep if clock_change - date_start_wear == 8 | clock_change - date_start_wear == 7 | clock_change - date_start_wear == 6 | clock_change - date_start_wear == 5 | clock_change - date_start_wear == 4 | clock_change - date_start_wear == 3 | clock_change - date_start_wear == 2 | clock_change - date_start_wear == 1 | clock_change - date_start_wear == 0 | clock_change - date_start_wear == -1 | clock_change - date_start_wear == -2 | clock_change - date_start_wear == -3 | clock_change - date_start_wear == -4 | clock_change - date_start_wear == -5 | clock_change - date_start_wear == -6 // 26,051 obs deleted
-describe // 8714 obs. 123 vars.
+keep if clock_change - date_start_wear == 13 | clock_change - date_start_wear == 12 | clock_change - date_start_wear == 11 | clock_change - date_start_wear == 10 | clock_change - date_start_wear == 9 | clock_change - date_start_wear == 8 | clock_change - date_start_wear == 7 | clock_change - date_start_wear == 6 | clock_change - date_start_wear == 5 | clock_change - date_start_wear == 4 | clock_change - date_start_wear == 3 | clock_change - date_start_wear == 2 | clock_change - date_start_wear == 1 | clock_change - date_start_wear == 0 | clock_change - date_start_wear == -1 | clock_change - date_start_wear == -2 | clock_change - date_start_wear == -3 | clock_change - date_start_wear == -4 | clock_change - date_start_wear == -5 | clock_change - date_start_wear == -6 
+describe // 123 vars. 11,780 obs.
 
-count if season =="Spring" // 3190
-count if season =="Autumn" // 5524
+
+count if season =="Spring" // 4,569
+count if season =="Autumn" // 7,211
+
 ************************************************************************	
 
 *8. Generate variable for age when starting wearing accelerometer
@@ -259,7 +269,7 @@ count if season =="Autumn" // 5524
 	gen age_accel = age_assess+date_diff_wholeyrs
 	list age_assess date_diff_wholeyrs age_accel in 1/5
 
-	sum age_accel //  obs: 8714. Mean 61.91198. Min: 43. Max. 78.
+	sum age_accel // min 43: max 78.
 
 ************************************************************************	
 
