@@ -39,7 +39,7 @@ save accel10.dta, replace
 
 keep if season =="Spring"
 
-*Generate mean & sd of each sleep duration day variable.
+*Generate mean & se of each sleep duration day variable.
 tabstat hours_sun_before hours_mon_before hours_tue_before hours_wed_before hours_thur_before hours_fri_before hours_sat_before hours_sun_change hours_mon_after hours_tue_after hours_wed_after hours_thur_after hours_fri_after hours_sat_after hours_sun_after, stats(mean sem) save 
 
 
@@ -77,7 +77,7 @@ use /mnt/project/accel10.dta, clear
 
 keep if season =="Autumn"
 
-*Generate mean & sd of each sleep duration day variable.
+*Generate mean & se of each sleep duration day variable.
 tabstat hours_sun_before hours_mon_before hours_tue_before hours_wed_before hours_thur_before hours_fri_before hours_sat_before hours_sun_change hours_mon_after hours_tue_after hours_wed_after hours_thur_after hours_fri_after hours_sat_after hours_sun_after, stats(mean sem) save 
 
 
