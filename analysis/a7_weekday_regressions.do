@@ -176,7 +176,7 @@ estout model1 model2 model3 model4 model5 model6 using springregress.txt, replac
 *Import results of regressions into Stata & turn into excel spreadsheet.
 
 	*set working directory*
-	cd "C:\Users\bo18534\OneDrive - University of Bristol\Main Project\accelerometer_study_2\analysis\weekday_regressions"
+	
 
 import delimited using springregress.txt, clear
 browse
@@ -305,7 +305,7 @@ estout model1 model2 model3 model4 model5 model6 using autumnregress.txt, replac
 *Import results of regressions into Stata & turn into excel spreadsheet.
 
 	*set working directory*
-cd "C:\Users\bo18534\OneDrive - University of Bristol\Main Project\accelerometer_study_2\analysis\weekday_regressions"
+
 
 import delimited using autumnregress.txt, clear
 browse
