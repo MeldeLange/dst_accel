@@ -22,8 +22,11 @@ count if season =="Autumn" // 7211
 
 
 
-*1. Impute sleep proportion for the Sunday 
-**********************************************
+*1. Impute sleep proportion for the Sunday of the clock changes (not the normal Sundays)
+*****************************************************************************************
+
+*NB: The variable sleep_prop_sun_adj will only be used for data for the clock change Sundays not the normal Sunday at the beginning & end of the fortnight.
+
 *Spring deleting a value
 gen sleep_prop_sun_adj_spr=(sleep_prop_sun*24-0.90)/23 if season =="Spring" //
 
