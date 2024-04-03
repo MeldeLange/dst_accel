@@ -8,7 +8,7 @@ use /mnt/project/accel7.dta, clear
 *1. Generate variables for sleep duration in minutes
 ***********************************************************************************************************
 
-*Monday - Saturday (24 hours in day = 1440 minutes)
+*Monday - Sunday (24 hours in day = 1440 minutes)
 gen sleep_dur_mon = sleep_prop_mon*1440
 
 gen sleep_dur_tue = sleep_prop_tue*1440
@@ -21,22 +21,9 @@ gen sleep_dur_fri = sleep_prop_fri*1440
 
 gen sleep_dur_sat = sleep_prop_sat*1440
 
-*Generate variable for sleep duration in minutes for Sunday of the clock change in Spring (sleep proportion is already adjusted to be for 23 hours = 1380 minutes)
-gen sleep_dur_sun=.
-replace sleep_dur_sun= sleep_prop_sun_adj*1380 if season =="Spring"
+gen sleep_dur_sun = sleep_prop_sun*1440 // this is fine for the normal Sundays but the clock change Sundays need further cleaning using the variable sleep_prop_sun_adj (see below). 
 
 
-*Generate variables for sleep duration in minutes for Sunday of the clock change in Autumn (sleep proportion is already adjusted to be for 25 hours = 1500 minutes)
-replace sleep_dur_sun= sleep_prop_sun_adj*1500 if season =="Autumn"
-
-*Save & upload
-save accel8.dta, replace
-!dx upload accel8.dta
-
-
-**********************************************************************************
-
-*2. Create sleep duration variables named as to whether day of week is before or after the clock change.
 
 *Create variable for start day
 gen start_day = . // 11780
@@ -55,6 +42,40 @@ replace start_day =12 if clock_change - date_start_wear == -3 // Starting wear W
 replace start_day =13 if clock_change - date_start_wear == -4 // Starting wear Thurs after: 764 
 replace start_day =14 if clock_change - date_start_wear == -5 // Starting wear Fri after: 468
 replace start_day =15 if clock_change - date_start_wear == -6 // Starting wear Sat after: 745
+
+
+
+******
+*Create variables for the adjusted Sundays in minutes for Spring (sleep_prop_1380) & Autumn (sleep_prop_1500)
+gen sleep_prop_1380 = sleep_prop_sun_adj*1380
+gen sleep_prop_1500 = sleep_prop_sun_adj*1500
+
+*Update sleep duration in minutes for Sunday of the clock change in Spring (sleep proportion adjusted variable is already adjusted to be for 23 hours = 1380 minutes)
+*People with start days 6-10 have data for the Sunday of the clock change.
+replace sleep_dur_sun = sleep_prop_1380 if season =="Spring" & start_day==6 // 379 changes
+replace sleep_dur_sun = sleep_prop_1380 if season =="Spring" & start_day==7 // 103 changes
+replace sleep_dur_sun = sleep_prop_1380 if season =="Spring" & start_day==8 // 168 changes
+replace sleep_dur_sun = sleep_prop_1380 if season =="Spring" & start_day==9 // 352 changes
+replace sleep_dur_sun = sleep_prop_1380 if season =="Spring" & start_day==10 // 513 changes
+*1515 changes in total = n for Sunday clock change day in Spring.
+
+*Generate variables for sleep duration in minutes for Sunday of the clock change in Autumn (sleep proportion adjusted variable is already adjusted to be for 25 hours = 1500 minutes)
+replace sleep_dur_sun = sleep_prop_1500 if season =="Autumn" & start_day==6 // 694 changes
+replace sleep_dur_sun = sleep_prop_1500 if season =="Autumn" & start_day==7 // 433 changes
+replace sleep_dur_sun = sleep_prop_1500 if season =="Autumn" & start_day==8 // 652 changes
+replace sleep_dur_sun = sleep_prop_1500 if season =="Autumn" & start_day==9 // 349 changes
+replace sleep_dur_sun = sleep_prop_1500 if season =="Autumn" & start_day==10 // 560 changes
+*2688 changes = n for Sunday clock change day in Autumn.
+
+
+*Save & upload
+save accel8.dta, replace
+!dx upload accel8.dta
+
+
+**********************************************************************************
+
+*2. Create sleep duration variables named as to whether day of week is before or after the clock change.
 
 
 *Create sleep dur by day in our study period
@@ -201,22 +222,24 @@ tab start_day if season =="Spring"
 
 
 
-sum sleep_dur_sun_before if season =="Spring" // obs: 1,785 Mean:  510.2864
+sum sleep_dur_sun_before if season =="Spring" // obs: 1,785 Mean:  564.2864
 sum sleep_dur_mon_before if season =="Spring" // obs: 1,382 Mean:   521.2758
-sum sleep_dur_tue_before if season =="Spring" //   1,761    515.8426
-sum  sleep_dur_wed_before if season =="Spring" //  1,518    510.5573
-sum  sleep_dur_thur_before if season =="Spring" //  1,381    517.6831 
-sum  sleep_dur_fri_before if season =="Spring" // 1,056    514.7727 
-sum  sleep_dur_sat_before if season =="Spring" // 1,002    554.6299
-sum  sleep_dur_sun_change if season =="Spring" // 1,515    499.4162
-sum  sleep_dur_mon_after if season =="Spring" //   1,136    524.7254
-sum  sleep_dur_tue_after if season =="Spring" //  1,603    521.7687
-sum  sleep_dur_wed_after if season =="Spring" // 1,500    520.0896
-sum  sleep_dur_thur_after if season =="Spring" // 1,525    516.7381
-sum  sleep_dur_fri_after if season =="Spring" //  1,435    533.7834
-sum  sleep_dur_sat_after if season =="Spring" // 1,041    544.1706
-sum  sleep_dur_sun_after if season =="Spring" //  1,269     506.556
+sum sleep_dur_tue_before if season =="Spring" //   1,761 Mean:  515.8426 
+sum  sleep_dur_wed_before if season =="Spring" //  1,518 Mean:  510.5573  
+sum  sleep_dur_thur_before if season =="Spring" //  1,381 Mean: 517.6831   
+sum  sleep_dur_fri_before if season =="Spring" // 1,056 Mean: 514.7727   
+sum  sleep_dur_sat_before if season =="Spring" // 1,002 Mean: 554.6299   
+sum  sleep_dur_sun_change if season =="Spring" // 1,515 Mean: 499.4162   
+sum  sleep_dur_mon_after if season =="Spring" //   1,136 Mean:  524.7254  
+sum  sleep_dur_tue_after if season =="Spring" //  1,603 Mean: 521.7687   
+sum  sleep_dur_wed_after if season =="Spring" // 1,500 Mean: 520.0896   
+sum  sleep_dur_thur_after if season =="Spring" // 1,525 Mean:516.7381   
+sum  sleep_dur_fri_after if season =="Spring" //  1,435 Mean: 533.7834   
+sum  sleep_dur_sat_after if season =="Spring" // 1,041  Mean: 544.1706   
+sum  sleep_dur_sun_after if season =="Spring" //  1,269  Mean: 560.556  
 
+*Sleep duration on Sun of clock change is 65 mins less than Sunday before.
+*Sleep duration on Sun of clock change is 61 mins less than the Sunday after.
 
 *Autumn
 tab start_day if season =="Autumn"
@@ -243,7 +266,7 @@ tab start_day if season =="Autumn"
 
 
 
-sum sleep_dur_sun_before if season =="Autumn" // 2,277    623.4229 
+sum sleep_dur_sun_before if season =="Autumn" // 2,277    569.4299
 sum sleep_dur_mon_before if season =="Autumn" //  1,845    523.7151 
 sum sleep_dur_tue_before if season =="Autumn" // 2,539    522.8975
 sum sleep_dur_wed_before if season =="Autumn" // 2,117     521.801
@@ -257,4 +280,7 @@ sum sleep_dur_wed_after if season =="Autumn" // 1,963    523.1609
 sum sleep_dur_thur_after if season =="Autumn" // 1,787    523.4606
 sum sleep_dur_fri_after if season =="Autumn" //  1,940    525.1398
 sum sleep_dur_sat_after if season =="Autumn" // 1,729    538.7882
-sum sleep_dur_sun_after if season =="Autumn" // 2,246    619.3122
+sum sleep_dur_sun_after if season =="Autumn" // 2,246    565.3122
+
+*Sleep duration on Sun of clock change is 33 minutes higher than the Sunday before.
+*Sleep duration on Sun of clock change is 38 minutes higher than the Sunday after.
