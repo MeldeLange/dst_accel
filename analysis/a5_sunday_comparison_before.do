@@ -32,17 +32,17 @@ graph save "sun_change_before_box_spring", replace
 ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaired
 
 *Get actual p value
-return list //p = 0.0035143557939267
+return list // 3.67731375530e-65
 
 *Power of estimate
 *We can calculate the power of our estimates by the following formula, we will have 80% power at 95% level of significance to detect effects outside of the following range:
 
 *-1.96*SE diff and 1.96*SE diff 
-*Difference in SE = 3.721558 
+*Difference in SE = 3.721558
 
-*-1.96*3.721558  = -7.2942537
+*-1.96*3.721558 = -7.2942537
 *1.96*3.721558 = 7.2942537
-*The difference in effect size we have here = -10.87015
+*The difference in effect size we have here =  -64.87015
 *We are powered to detect a difference of +/-7.2942537. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 *********************************************************
@@ -63,42 +63,42 @@ bysort age_accel_tert:ttest sleep_dur_sun_change == sleep_dur_sun_before, unpair
 *-1.96*SE and 1.96*SE 
 
 *age_accel_tert = 1
-*Difference in SE = 6.428964
+*Difference in SE = 6.428964 
 
 
-*-1.96*6.428964 = -12.600769
-*1.96*6.428964  = 12.600769
+*-1.96*6.428964  = -12.600769
+*1.96*6.428964   = 12.600769
 
-*The difference in effect size we have here = -18.90582
-*We are powered to detect a difference of +/-12.600769. This issmaller than the difference we detected, so we are well powered to detect differences of the size we found.
+*The difference in effect size we have here = -72.90582
+*We are powered to detect a difference of +/-12.600769. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.0033 
+
 
 ********************
 
 *age_accel_tert = 2
-*Difference in SE = 6.026318
+*Difference in SE = 6.026318  
 
 *-1.96*6.026318 = -11.811583
 *1.96*6.026318 = 11.811583
 
-*The difference in effect size we have here = -5.533074
-*We are powered to detect a difference of +/-11.811583 . This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here =-59.53308 
+*We are powered to detect a difference of +/-11.811583 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.3587
+
 
 ******************
 
 *age_accel_tert = 3
-*Difference in SE = 6.90724 
+*Difference in SE =  6.90724
 
 *-1.96*6.90724  = -13.53819
 *1.96*6.90724   = 13.53819
 
-*The difference in effect size we have here =  -6.366432
-*We are powered to detect a difference of +/-13.53819. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here =  -60.36643 
+*We are powered to detect a difference of +/-13.53819. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.3569  
+ 
 
 **************
 *SEX
@@ -116,24 +116,23 @@ bysort sex: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaired
 *-1.96*4.827259  = -9.4614276
 *1.96*4.827259 = 9.4614276
 
-*The difference in effect size we have here =  -10.84549
+*The difference in effect size we have here =  -64.8455 
 *We are powered to detect a difference of +/-9.4614276 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.0248
+
 
 *********
 
 
 *sex = male
-*Difference in SE = 5.824513
+*Difference in SE = 5.824512
+*-1.96*5.824512= -11.416044
+*1.96*5.824512 = 11.416044
 
-*-1.96*5.824513= -11.416045
-*1.96*5.824513 = 11.416045
+*The difference in effect size we have here = -64.90331 
+*We are powered to detect a difference of +/-11.416044. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*The difference in effect size we have here = -10.90331
-*We are powered to detect a difference of +/-11.416045. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
 
-*p = 0.0614
 
 *************************************
 
@@ -148,15 +147,15 @@ bysort chrono_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 *Power of our estimates
 
 *chronotype = morning
-*Difference in SE = 5.011405 
+*Difference in SE =  5.011405 
 
 *-1.96*5.011405  = -9.8223538
-*1.96*5.011405   = 9.8223538
+*1.96*5.011405 = 9.8223538
 
-*The difference in effect size we have here = -12.63009
+*The difference in effect size we have here = -66.63009
 *We are powered to detect a difference of +/-9.8223538. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.0118
+
 ******************
 
 *chronotype = no preference
@@ -165,24 +164,24 @@ bysort chrono_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 *-1.96*11.17763  = -21.908155
 *1.96*11.17763 = 21.908155
 
-*The difference in effect size we have here = -.8136427 
-*We are powered to detect a difference of +/-21.908155. This is much bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -54.81364
+*We are powered to detect a difference of +/-21.908155. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.9420
+
 
 ******************
 
 *chronotype = evening
-*Difference in SE = 6.495652
+*Difference in SE =  6.495652 
 
 *-1.96*6.495652 = -12.731478
 *1.96*6.495652= 12.731478
 
-*The difference in effect size we have here =  -11.30237
-*We are powered to detect a difference of +/-12.731478. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here =  -65.30237
+*We are powered to detect a difference of +/-12.731478. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
-*p= 0.0821
+
 **********************************************************************************
 
 
@@ -196,42 +195,37 @@ bysort sleep_dur_cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpai
 *Power of our estimates
 
 *sleep dur <=6
-*Difference in SE = 8.444218 
+*Difference in SE = 8.444218
 
 *-1.96*8.444218  = -16.550667
 *1.96*8.444218  = 16.550667
 
-*The difference in effect size we have here =  -7.477487
-*We are powered to detect a difference of +/-16.550667 . This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
-
-*p value: 0.3762 
+*The difference in effect size we have here =  -61.47749
+*We are powered to detect a difference of +/-16.550667 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
+ 
 
 **********
 
 *sleep dur 7-8
-*Difference in SE = 4.270396
+*Difference in SE = 4.270396 
 
 *-1.96*4.270396 = -8.3699762
 *1.96*4.270396= 8.3699762
 
-*The difference in effect size we have here = -11.09996
+*The difference in effect size we have here = -65.09996
 *We are powered to detect a difference of +/-8.3699762. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-
-*p value: 0.0094
 
 ************
 
 *sleep dur >=9
-*Difference in SE =  15.25212 
+*Difference in SE = 15.25212
 
-*-1.96*15.25212  = -29.894155
+*-1.96*15.25212 = -29.894155
 *1.96*15.25212  = 29.894155
 
-*The difference in effect size we have here = -16.08454
-*We are powered to detect a difference of +/-29.894155 . This is much bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
-
-*p value: 0.2928
+*The difference in effect size we have here = -70.08454
+*We are powered to detect a difference of +/-29.894155 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 *************************************************************
 
@@ -247,38 +241,34 @@ bysort employ_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 
 *Difference in SE = 4.631706 
 
-*-1.96*4.631706  = -9.0781438
-*1.96*4.631706  = 9.0781438
+*-1.96*4.631706   = -9.0781438
+*1.96*4.631706   = 9.0781438
 
-*The difference in effect size we have here = -11.94386
+*The difference in effect size we have here = -65.94387
 *We are powered to detect a difference of +/-9.0781438. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.0100
 
 *******
 
 *employ= retired
-*Difference in SE = 6.646657
+*Difference in SE =  6.646657 
 
-*-1.96*6.646657 = -13.027448
-*1.96*6.646657= 13.027448
+*-1.96*6.646657  = -13.027448
+*1.96*6.646657 = 13.027448
 
-*The difference in effect size we have here = -6.328722
-*We are powered to detect a difference of +/-13.027448. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
-
-*p value: 0.3412
+*The difference in effect size we have here = -60.32872
+*We are powered to detect a difference of +/-13.027448. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 *******
 
 *employ= other
 *Difference in SE = 17.15196
-*-1.96*17.15196 = -33.617842
-*1.96*17.15196 =33.617842
+*-1.96*17.15196 = 
+*1.96*17.15196 =
 
-*The difference in effect size we have here = -23.84731
-*We are powered to detect a difference of +/-33.617842. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -77.84731
+*We are powered to detect a difference of +/-33.617842. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.1658 
 **************************************************************************
 
 *1c) Get result of overall & stratified t tests out into spreadsheet.
@@ -653,12 +643,12 @@ return list
 *-1.96*SE diff and 1.96*SE diff 
 *Difference in SE = 3.036138 
 
-*-1.963.036138  = -5.9508305
-*1.96*3.036138  = 5.9508305
-*The difference in effect size we have here = -20.60507
+*-1.96*3.036138   = 5.9508305
+*1.96*3.036138   = 5.9508305
+*The difference in effect size we have here = 33.39493
 *We are powered to detect a difference of +/-5.9508305. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p value: 1.28252583735e-11
+*p value: 8.06526786007e-28
 *********************************************************
 
 *2b. Stratified
@@ -680,38 +670,37 @@ bysort age_accel_tert:ttest sleep_dur_sun_change == sleep_dur_sun_before, unpair
 *Difference in SE = 5.135479 
 
 
-*-1.96*5.135479   = -10.065539
-*1.96*5.135479  = 10.065539
+*-1.96* 5.135479   = -10.065539
+*1.96*5.135479   = 10.065539
 
-*The difference in effect size we have here = -17.56446
+*The difference in effect size we have here = 36.43554
 *We are powered to detect a difference of +/-10.065539. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p =  0.0006 
+ 
 ********************
 
 *age_accel_tert = 2
-*Difference in SE =  4.9525 
+*Difference in SE = 4.9525
 
 *-1.96*4.9525   = -9.7069
 *1.96*4.9525   = 9.7069
 
-*The difference in effect size we have here = -20.67415
+*The difference in effect size we have here = 33.32584
 *We are powered to detect a difference of +/-9.7069 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.0000 
 
 ******************
 
 *age_accel_tert = 3
-*Difference in SE =5.717352
+*Difference in SE =5.71735
 
-*-1.96*5.717352 = -11.20601
+*-1.96*5.71735 = -11.206006
 
-*1.96*5.717352  = 11.20601
+*1.96*5.71735  = 11.206006
 
 
-*The difference in effect size we have here = -23.72379 
-*We are powered to detect a difference of +/-11.20601. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
+*The difference in effect size we have here = 30.2762 
+*We are powered to detect a difference of +/-11.206006. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 
@@ -726,12 +715,12 @@ bysort sex: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaired
 *Power of our estimates
 
 *sex = female
-*Difference in SE = 3.882946
+*Difference in SE = 3.882946 
 
-*-1.96*3.882946   = -7.6105742
-*1.96*3.882946  = 7.6105742
+*-1.96*3.882946    = -7.6105742
+*1.96*3.882946   = 7.6105742
 
-*The difference in effect size we have here =  -18.39501
+*The difference in effect size we have here =  35.60499  
 *We are powered to detect a difference of +/-7.6105742. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -739,12 +728,12 @@ bysort sex: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaired
 
 
 *sex = male
-*Difference in SE =  4.822112
+*Difference in SE =  4.822112 
 
 *-1.96*4.822112= -9.4513395
 *1.96*4.822112= 9.4513395
 
-*The difference in effect size we have here = -23.46995
+*The difference in effect size we have here =  30.53005 
 *We are powered to detect a difference of +/-9.4513395. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 *************************************
@@ -765,9 +754,8 @@ bysort chrono_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 *-1.96*3.88635  = -7.617246
 *1.96*3.88635   = 7.617246
 
-*The difference in effect size we have here = -22.38351
+*The difference in effect size we have here = 31.61649 
 *We are powered to detect a difference of +/-7.617246. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
-
 
 
 ******************
@@ -776,12 +764,12 @@ bysort chrono_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 *Difference in SE =  10.82957 
 
 *-1.96*10.82957  = -21.225957
-*1.96*10.82957 = 21.225957
+*1.96*10.82957  = 21.225957
 
-*The difference in effect size we have here = -15.89449
-*We are powered to detect a difference of +/-21.225957. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here =38.10551
+*We are powered to detect a difference of +/-21.225957. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.1428
+
 ******************
 
 *chronotype = evening
@@ -790,11 +778,10 @@ bysort chrono_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 *-1.96*5.464812 = -10.711032
 *1.96*5.464812= 10.711032
 
-*The difference in effect size we have here = -18.66865
+*The difference in effect size we have here = 35.33135
 *We are powered to detect a difference of +/-10.711032. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
-*p= 0.0007
 **********************************************************************************
 
 
@@ -808,39 +795,36 @@ bysort sleep_dur_cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpai
 *Power of our estimates
 
 *sleep dur <=6
-*Difference in SE = 7.010268 
+*Difference in SE =   7.010268 
 
 *-1.96*7.010268  = -13.740125
 *1.96*7.010268  = 13.740125
 
-*The difference in effect size we have here = -23.75391
-*We are powered to detect a difference of +/-13.740125 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
-
-*p value: 0.0007
+*The difference in effect size we have here = 30.24609
+*We are powered to detect a difference of +/-13.740125. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 **********
 
 *sleep dur 7-8
 *Difference in SE =3.443836
 
-*-1.96*3.443836 = -6.7499186
-*1.96* 3.443836= 6.7499186
+*-1.96*3.443836= -6.7499186
+*1.96*3.443836 = 6.7499186
 
-*The difference in effect size we have here = -19.76147
+*The difference in effect size we have here = 34.23853 
 *We are powered to detect a difference of +/-6.7499186. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 ************
 
 *sleep dur >=9
-*Difference in SE = 13.31277 
+*Difference in SE =  13.31277
 *-1.96*13.31277  = -26.093029
-*1.96*13.31277   = 26.093029
+*1.96*13.31277  = 26.093029
 
-*The difference in effect size we have here = -30.07113
-*We are powered to detect a difference of +/-26.093029 . This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
+*The difference in effect size we have here = 23.92887
+*We are powered to detect a difference of +/-26.093029 . This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
 
-*p value:0.0246 
 
 *************************************************************
 
@@ -854,12 +838,12 @@ bysort employ_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 
 *employ= employed
 
-*Difference in SE =  3.853391
+*Difference in SE = 3.853391 
 
 *-1.96*3.853391  = -7.5526464
 *1.96*3.853391 = 7.5526464
 
-*The difference in effect size we have here = -19.0839
+*The difference in effect size we have here =  34.9161
 *We are powered to detect a difference of +/-7.5526464. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -870,21 +854,20 @@ bysort employ_3cats: ttest sleep_dur_sun_change == sleep_dur_sun_before, unpaire
 *-1.96*5.349763= -10.485535
 *1.96*5.349763= 10.485535
 
-*The difference in effect size we have here = -25.24711
+*The difference in effect size we have here = 28.75289
 *We are powered to detect a difference of +/-10.485535. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 *******
 
 *employ= other
-*Difference in SE = 12.19414 
+*Difference in SE =12.19414
 *-1.96*12.19414 = -23.900514
 *1.96*12.19414  = 23.900514
 
-*The difference in effect size we have here = -17.64363
-*We are powered to detect a difference of +/-23.900514. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = 36.35636
+*We are powered to detect a difference of +/-23.900514. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.1488 
 **************************************************************************
 
 *2c) Get result of overall & stratified t tests out into spreadsheet.
