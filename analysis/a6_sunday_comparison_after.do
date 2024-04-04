@@ -37,15 +37,15 @@ restore
 *We can calculate the power of our estimates by the following formula, we will have 80% power at 95% level of significance to detect effects outside of the following range:
 
 *-1.96*SE diff and 1.96*SE diff 
-*Difference in SE =3.047831
+*Difference in SE = 3.047831 
 
-*-1.96*3.047831  = -5.9737488
-*1.96*3.047831 = 5.9737488
-*The difference in effect size we have here = -16.49434
+*-1.96*3.047831   = -5.9737488
+*1.96*3.047831  = 5.9737488
+*The difference in effect size we have here = 37.50566
 *We are powered to detect a difference of +/-5.9737488. This is much smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
-*P value: 6.53354319995e-08
+*P value: 2.67708578491e-34
 ************************************
 
 *SPRING OVERALL ttest results
@@ -54,14 +54,14 @@ restore
 *We can calculate the power of our estimates by the following formula, we will have 80% power at 95% level of significance to detect effects outside of the following range:
 
 *-1.96*SE diff and 1.96*SE diff 
-*Difference in SE =3.998999
+*Difference in SE =3.998999 
 
-*-1.96*3.998999  = -7.838038
+*-1.96*3.998999 = -7.838038
 *1.96*3.998999 = 7.838038
-*The difference in effect size we have here = -7.13979
-*We are powered to detect a difference of +/-7.838038. This is bigger than the difference we detected, so we are not powered to detect differences of the size we found.
+*The difference in effect size we have here = -61.13979 
+*We are powered to detect a difference of +/-7.838038. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p value: 0.0743062947910364
+*p value: 9.90239316913e-51
 
 **********************************************************************
 
@@ -93,11 +93,11 @@ restore
 *age_accel_tert = 1
 *Difference in SE = 5.458101 
 
-*-1.96*5.458101  = -10.697878
-*1.96*5.458101   = 10.697878
+*-1.96*5.458101 = -10.697878
+*1.96*5.458101  = 10.697878
 
-*The difference in effect size we have here = -7.69467
-*We are powered to detect a difference of +/-10.697878 This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = 46.30533
+*We are powered to detect a difference of +/-10.697878 This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 *****
@@ -105,10 +105,10 @@ restore
 *age_accel_tert = 2
 *Difference in SE = 4.87876
 
-*-1.96*4.87876 = -9.5623696
-*1.96*4.87876  =9.5623696
+*-1.96*4.87876 = - 9.5623696
+*1.96*4.87876  = 9.5623696
 
-*The difference in effect size we have here = -18.82123
+*The difference in effect size we have here = 35.17877
 *We are powered to detect a difference of +/-9.5623696 This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -118,10 +118,10 @@ restore
 *Difference in SE = 5.52476
 
 *-1.96*5.52476 = -10.82853
-*1.96*5.52476  =10.82853
+*1.96*5.52476 =10.82853
 
-*The difference in effect size we have here = -24.11262
-*We are powered to detect a difference of +/-10.82853. This is much smaller than the difference we detected, so we are well powered to detect differences of the size we found.
+*The difference in effect size we have here = 29.88737 
+*We are powered to detect a difference of +/-10.82853. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 
@@ -130,12 +130,12 @@ restore
 *SEX
 
 *sex = female
-*Difference in SE = 3.97268 
+*Difference in SE = 3.97268
 
-*-1.96*3.97268  =-7.7864528
+*-1.96*3.97268  = -7.7864528
 *1.96*3.97268  = 7.7864528
 
-*The difference in effect size we have here = -13.99543
+*The difference in effect size we have here = 40.00457
 *We are powered to detect a difference of +/-7.7864528. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -143,12 +143,12 @@ restore
 
 
 *sex = male
-*Difference in SE = 4.728057
+*Difference in SE = 4.728057 
 
 *-1.96*4.728057= -9.2669917
-*1.96*4.728057 = 9.2669917
+*1.96*4.728057 =9.2669917
 
-*The difference in effect size we have here = -19.54466
+*The difference in effect size we have here = 34.45534
 *We are powered to detect a difference of +/-9.2669917. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 *************************************
@@ -161,31 +161,31 @@ restore
 *-1.96*3.900082= -7.6441607
 *1.96*3.900082  = 7.6441607
 
-*The difference in effect size we have here = -13.40344
+*The difference in effect size we have here = 40.59656
 *We are powered to detect a difference of +/-7.6441607. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 ******
 
 *chronotype = no preference
-*Difference in SE = 10.34783
+*Difference in SE = 10.34783 
 
-*-1.96*10.34783 = -20.281747
-*1.96*10.34783 = 20.281747
+*-1.96*10.34783  = -20.281747
+*1.96*10.34783  = 20.281747
 
-*The difference in effect size we have here = -15.07536
-*We are powered to detect a difference of +/-20.281747. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here =38.92463
+*We are powered to detect a difference of +/-20.281747. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 *****
 
 *chronotype = evening
-*Difference in SE =  5.600213
+*Difference in SE = 5.600213 
 
-*-1.96*5.600213 = -10.976417
-*1.96*5.600213= 10.976417
+*-1.96*5.600213  = -10.976417
+*1.96*5.600213 = 10.976417
 
-*The difference in effect size we have here = -23.21376
+*The difference in effect size we have here = 30.78624
 *We are powered to detect a difference of +/-10.976417. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -196,24 +196,24 @@ restore
 
 
 *sleep dur <=6
-*Difference in SE = 7.100321
+*Difference in SE = 7.100321 
 
-*-1.96*7.100321 = -13.916629
-*1.96*7.100321 = 13.916629
+*-1.96*7.100321  = -13.916627
+*1.96*7.100321 = 13.916627
 
-*The difference in effect size we have here = -10.97876
-*We are powered to detect a difference of +/-13.916629 . This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = 43.02124 
+*We are powered to detect a difference of +/-13.916627. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
 **********
 
 *sleep dur 7-8
-*Difference in SE = 3.456767
+*Difference in SE = 3.456767 
 
-*-1.96*3.456767 = -6.7752633
-*1.96*3.456767 = 6.7752633
+*-1.96*3.456767  = -6.7752633
+*1.96*3.456767  = 6.7752633
 
-*The difference in effect size we have here = -16.65898
+*The difference in effect size we have here = 37.34102
 *We are powered to detect a difference of +/-6.7752633. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -225,8 +225,8 @@ restore
 *-1.96*12.94245= -25.367202
 *1.96*12.94245 = 25.367202
 
-*The difference in effect size we have here = -28.98857
-*We are powered to detect a difference of +/-25.367202 . This is much smaller than the difference we detected, so we are well powered to detect differences of the size we found.
+*The difference in effect size we have here =25.01143
+*We are powered to detect a difference of +/-25.367202. This is just bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
 
 
 *************************************************************
@@ -241,7 +241,7 @@ restore
 *-1.96*3.887511 = -7.6195216
 *1.96*3.887511 = 7.6195216
 
-*The difference in effect size we have here =  -11.57787
+*The difference in effect size we have here = 42.42213
 *We are powered to detect a difference of +/-7.6195216. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -250,10 +250,10 @@ restore
 *employ= retired
 *Difference in SE = 5.212265
 
-*-1.96*5.212265 = -10.216039
+*-1.96*5.212265 = 10.216039
 *1.96*5.212265= 10.216039
 
-*The difference in effect size we have here = -21.81268
+*The difference in effect size we have here =32.18732
 *We are powered to detect a difference of +/-10.216039. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
@@ -261,12 +261,11 @@ restore
 *******
 
 *employ= other
-*Difference in SE = 13.10534
-*-1.96*13.10534 = -25.686466
-*1.96*13.10534 =25.686466
-
-*The difference in effect size we have here = -38.10843
-*We are powered to detect a difference of +/-25.686466. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
+*Difference in SE =13.10534  
+*-1.96*13.10534  = -25.686466
+*1.96*13.10534  =25.686466
+*The difference in effect size we have here = 15.89157 
+*We are powered to detect a difference of +/-25.686466. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
 
 **************************************************************************
 
@@ -281,66 +280,63 @@ restore
 *-1.96*6.855191 = -13.436174
 *1.96*6.855191  = 13.436174
 
-*The difference in effect size we have here = -7.791369
-*We are powered to detect a difference of +/-13.436174 This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -61.79137
+*We are powered to detect a difference of +/-13.436174. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.2560 
+
 
 *****
 
 *age_accel_tert = 2
-*Difference in SE = 6.728892
+*Difference in SE = 6.728892 
 
-*-1.96*6.728892 = -13.188628
+*-1.96*6.728892  = -13.188628
 *1.96*6.728892  = 13.188628
 
-*The difference in effect size we have here = -5.18789 
-*We are powered to detect a difference of +/-13.188628 This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -59.18789
+*We are powered to detect a difference of +/-13.188628. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.4409 
+ 
 
 *****
 
 *age_accel_tert = 3
-*Difference in SE = 7.160296 
+*Difference in SE =  7.160296  
 
-*-1.96*7.160296  = -14.03418
-*1.96*7.160296  = 14.03418
+*-1.96*7.160296    = -14.03418
+*1.96*7.160296    =14.03418
 
 
-*The difference in effect size we have here = -8.301534
-*We are powered to detect a difference of +/-14.03418. This is bigger than the difference we detected, so we are well not powered to detect differences of the size we found.
+*The difference in effect size we have here = -62.30154
+*We are powered to detect a difference of +/-14.03418. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.2467 
 
 ******************
 
 *SEX
 
 *sex = female
-*Difference in SE = 5.168961
+*Difference in SE =  5.168961  
 
-*-1.96*5.168961  = -10.131164
-*1.96*5.168961 = 10.131164
+*-1.96*5.168961    = -10.131164
+*1.96*5.168961   = 10.131164
 
-*The difference in effect size we have here = -7.61488
-*We are powered to detect a difference of +/-10.131164. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -61.61488 
+*We are powered to detect a difference of +/-10.131164. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.1409
 
 *********
 
 
 *sex = male
 *Difference in SE = 6.291505
-
 *-1.96*6.291505= -12.33135
 *1.96*6.291505 = 12.33135
 
-*The difference in effect size we have here = -6.552833
-*We are powered to detect a difference of +/-12.33135. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here =  -60.55283
+*We are powered to detect a difference of +/-12.33135. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p = 0.2978
+
 
 *************************************
 
@@ -349,39 +345,38 @@ restore
 *chronotype = morning
 *Difference in SE =  5.254859
 
-*-1.96* 5.254859 = -10.299524
-*1.96* 5.254859  = 10.299524
+*-1.96*5.254859  = -10.299524
+*1.96*5.254859   = 10.299524
 
-*The difference in effect size we have here = -11.40302
+*The difference in effect size we have here = -65.40302
 *We are powered to detect a difference of +/-10.299524. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p= 0.0302 
+
 ******
 
 *chronotype = no preference
-*Difference in SE = 13.26005 
+*Difference in SE = 13.26005
 
 *-1.96*13.26005  = -25.989698
 *1.96*13.26005  = 25.989698
 
-*The difference in effect size we have here = -.8758014
-*We are powered to detect a difference of +/-25.989698. This is much bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -54.8758
+*We are powered to detect a difference of +/-25.989698. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.9474
+
 
 *****
 
 *chronotype = evening
-*Difference in SE =  7.016837
+*Difference in SE = 7.016837
 
-*-1.96*7.016837 = -13.753001
-*1.96*7.016837= 13.753001
+*-1.96* = -7.016837
+*1.96*= 7.016837
 
-*The difference in effect size we have here = 1.003444
-*We are powered to detect a difference of +/-13.753001. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -52.99656
+*We are powered to detect a difference of +/-7.016837. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
-*p= 0.8863 
 ************************
 
 
@@ -389,29 +384,26 @@ restore
 
 
 *sleep dur <=6
-*Difference in SE = 9.225717
+*Difference in SE =  9.225717
 
 *-1.96*9.225717 = -18.082405
 *1.96*9.225717 = 18.082405
 
-*The difference in effect size we have here = -9.735623
-*We are powered to detect a difference of +/-18.082405 . This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
-
-*p value: 0.2917
+*The difference in effect size we have here =-63.73563
+*We are powered to detect a difference of +/-18.082405. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 **********
 
 *sleep dur 7-8
-*Difference in SE = 4.612413
+*Difference in SE =4.612413 
 
-*-1.96*4.612413 = -9.0403295
-*1.96*4.612413 = 9.0403295
+*-1.96*4.612413  = -9.0403295
+*1.96*4.612413  = 9.0403295
 
-*The difference in effect size we have here = -7.432156
-*We are powered to detect a difference of +/-9.0403295. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -61.43216 
+*We are powered to detect a difference of +/-9.0403295. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 
-*p value: 0.1073 
 
 ************
 
@@ -419,12 +411,10 @@ restore
 *Difference in SE =15.07772
 
 *-1.96*15.07772= -29.552331
-*1.96*15.07772  = 29.552331
+*1.96*15.07772= 29.552331
 
-*The difference in effect size we have here = 6.158151
-*We are powered to detect a difference of +/-29.552331. This is much bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
-
-*p value: 0.6835
+*The difference in effect size we have here = -47.84185
+*We are powered to detect a difference of +/-29.552331. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
 *************************************************************
 
@@ -433,40 +423,39 @@ restore
 
 *employ= employed
 
-*Difference in SE = 5.076997
+*Difference in SE =5.076997 
 
-*-1.96*5.076997 = -9.9509141
+*-1.96*5.076997  = -9.9509141
 *1.96*5.076997 = 9.9509141
 
-*The difference in effect size we have here =  -10.83119
+*The difference in effect size we have here =  -64.83119
 *We are powered to detect a difference of +/-9.9509141. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p=0.0330
+
 
 *******
 
 *employ= retired
-*Difference in SE = 6.896002
+*Difference in SE =6.896002
 
 *-1.96*6.896002 = -13.516164
 *1.96*6.896002= 13.516164
 
-*The difference in effect size we have here = -4.847804
-*We are powered to detect a difference of +/-13.516164. This is bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -58.84781
+*We are powered to detect a difference of +/-13.516164. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p value: 0.4822
 
 *******
 
 *employ= other
-*Difference in SE =  17.96248
-*-1.96* 17.96248 = -35.206461
-*1.96* 17.96248 = 35.206461
+*Difference in SE =  17.96248 
+*-1.96*17.96248   = -35.206461
+*1.96*17.96248  = 35.206461
 
-*The difference in effect size we have here = 9.566113
-*We are powered to detect a difference of +/-35.206461. This is much bigger than the difference we detected, so we are not well powered to detect differences of the size we found.
+*The difference in effect size we have here = -44.43389
+*We are powered to detect a difference of +/-35.206461. This is smaller than the difference we detected, so we are well powered to detect differences of the size we found.
 
-*p value: 0.5949 
+
 **************************************************************************
 
 
