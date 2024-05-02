@@ -171,3 +171,66 @@ graph export "autumn_coefplot.wmf", replace
 graph export "autumn_coefplot.pdf", as(pdf) replace 
 graph export "autumn_coefplot.eps", replace
 
+
+****************************************************************
+
+*4. Coefplots with clock change Sunday highlighted
+
+**In stata on desktop**
+
+*Set working directory
+
+
+*a) Spring
+mat X= [9.4047728, 8.6879301, 8.5973768, 8.5092888, 8.6280518, 8.5795450, 9.2438326, 8.3236036, 8.7454224, 8.6961451, 8.6681604, 8.6123018, 8.8963900, 9.0695105, 9.3426008 \ 0.0413847, 0.0459214, 0.0388625, 0.0413338, 0.0475106, 0.0516914, 0.0604865, 0.0464254, 0.0498264, 0.0401147, 0.0431181, 0.0414889, 0.0469337, 0.0509452, 0.0472376]
+
+matrix list X
+
+
+mat Xh= J(rowsof(X), colsof(X), .z)
+mat Xh[1,8]= X[1,8]
+mat Xh[2,8]= X[2,8]
+mat X[1,8]= .z
+mat X[2,8]= .z
+
+
+coefplot (mat(X), se(2) color(gray) ciopts(lc(gray)))  \ ///
+(mat(Xh),  offset(0) se(2) msymbol(S) color(black) ciopts(lc(black))), ///
+vert nokey xtitle("Day", height(5)) ytitle("Mean sleep duration (hours) +/-SEM", height(5)) ylabel(, nogrid) nokey ///
+xlab(1 "Sun" 2 "Mon" 3 "Tue" 4 "Wed" 5 "Thur" 6 "Fri" 7 "Sat" ///
+8 "{bf:Sun*}" 9 "Mon" 10 "Tue" 11 "Wed" 12 "Thur" 13 "Fri" 14 "Sat" 15 "Sun") ///
+note(*Sunday of clock changes)
+
+*Save as stata graph, pdf & windows metafile
+graph save "spring_clock_coefplot", replace
+graph export "spring_clock_coefplot.wmf", replace
+graph export "spring_clock_coefplot.pdf", as(pdf) replace 
+graph export "spring_clock_coefplot.eps", replace
+
+
+*b) Autumn
+clear matrix
+mat X= [9.4903822, 8.7285852, 8.7149582, 8.6966839, 8.6700277, 8.6959219, 9.0178194, 10.0469646, 8.7648144, 8.7836390, 8.7193480, 8.7243423, 8.7523298, 8.9798031, 9.4218702 \ 0.0371699, 0.0407324, 0.0350937, 0.0359445, 0.0359799, 0.0343243, 0.0384910, 0.0343172, 0.0365113, 0.0333091, 0.0381684, 0.0385606, 0.0384786, 0.0414793, 0.0374347]
+
+matrix list X
+
+
+mat Xh= J(rowsof(X), colsof(X), .z)
+mat Xh[1,8]= X[1,8]
+mat Xh[2,8]= X[2,8]
+mat X[1,8]= .z
+mat X[2,8]= .z
+
+
+coefplot (mat(X), se(2) color(gray) ciopts(lc(gray)))  \ ///
+(mat(Xh),  offset(0) se(2) msymbol(S) color(black) ciopts(lc(black))), ///
+vert nokey xtitle("Day", height(5)) ytitle("Mean sleep duration (hours) +/-SEM", height(5)) ylabel(, nogrid) nokey ///
+xlab(1 "Sun" 2 "Mon" 3 "Tue" 4 "Wed" 5 "Thur" 6 "Fri" 7 "Sat" ///
+8 "{bf:Sun*}" 9 "Mon" 10 "Tue" 11 "Wed" 12 "Thur" 13 "Fri" 14 "Sat" 15 "Sun") ///
+note(*Sunday of clock changes)
+
+*Save as stata graph, pdf & windows metafile
+graph save "autumn_clock_coefplot", replace
+graph export "autumn_clock_coefplot.wmf", replace
+graph export "autumn_clock_coefplot.pdf", as(pdf) replace 
+graph export "autumn_clock_coefplot.eps", replace
